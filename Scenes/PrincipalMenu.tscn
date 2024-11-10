@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://cydu2t0sulmee"]
+
+[ext_resource type="Texture2D" uid="uid://088e8656asm5" path="res://Sprites/Sprites Botones/Sprite-START_BUTTON.png" id="1_oup8a"]
+[ext_resource type="Script" path="res://Scripts/PrincipalMenu/StartButtonScript.gd" id="2_dvi0j"]
+[ext_resource type="Texture2D" uid="uid://cxyvgm46amcgb" path="res://Sprites/Sprites Botones/Sprite-OPTIONS_BUTTON.png" id="3_gcc0a"]
+[ext_resource type="Script" path="res://Scripts/PrincipalMenu/OptionsButtonScript.gd" id="4_qbjub"]
+[ext_resource type="Texture2D" uid="uid://756ne7eilcfx" path="res://Sprites/Sprites Botones/Sprite-EXIT_BUTTON.png" id="5_rax4u"]
+[ext_resource type="Script" path="res://Scripts/PrincipalMenu/ExitButtonScript.gd" id="6_58fr7"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.376471, 0.376471, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+icon = ExtResource("1_oup8a")
+script = ExtResource("2_dvi0j")
+
+[node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+icon = ExtResource("3_gcc0a")
+script = ExtResource("4_qbjub")
+
+[node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+icon = ExtResource("5_rax4u")
+script = ExtResource("6_58fr7")
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Version 0.0.0
+"

@@ -1,0 +1,151 @@
+[gd_scene load_steps=5 format=3 uid="uid://by66j6r3k0dp0"]
+
+[ext_resource type="Texture2D" uid="uid://co5bxgkv8jrq3" path="res://Sprites/Sprites Botones/Sprite-APPLY_BUTTON.png" id="1_6fmgy"]
+[ext_resource type="Texture2D" uid="uid://756ne7eilcfx" path="res://Sprites/Sprites Botones/Sprite-EXIT_BUTTON.png" id="2_5ocmw"]
+[ext_resource type="Script" path="res://Scripts/OptionsMenu/ApplyOptionsButton.gd" id="2_7eevp"]
+[ext_resource type="Script" path="res://Scripts/OptionsMenu/ExitOptionsButton.gd" id="4_nqf7n"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.376471, 0.376471, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="DisplayModeContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/DisplayModeContainer"]
+layout_mode = 2
+color = Color(1.05888e-06, 0.491312, 0.491312, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/DisplayModeContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/DisplayModeContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "Display Mode"
+
+[node name="MenuButton" type="MenuButton" parent="MarginContainer/VBoxContainer/DisplayModeContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 40
+text = "Prueba"
+
+[node name="ResolutionContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/ResolutionContainer"]
+layout_mode = 2
+color = Color(1.51612e-06, 0.284428, 0.284428, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ResolutionContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ResolutionContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "Resolution"
+
+[node name="MenuButton" type="MenuButton" parent="MarginContainer/VBoxContainer/ResolutionContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 40
+text = "Prueba
+"
+
+[node name="MaxFramerateContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/MaxFramerateContainer"]
+layout_mode = 2
+color = Color(1.05888e-06, 0.491312, 0.491312, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MaxFramerateContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MaxFramerateContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "Max Framerate"
+
+[node name="MenuButton" type="MenuButton" parent="MarginContainer/VBoxContainer/MaxFramerateContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 40
+text = "Prueba"
+
+[node name="SoundContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/SoundContainer"]
+layout_mode = 2
+color = Color(1.51612e-06, 0.284428, 0.284428, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/SoundContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/SoundContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "Sound"
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/SoundContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+color = Color(1.05888e-06, 0.491312, 0.491312, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="ApplyOptionsButtont" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+icon = ExtResource("1_6fmgy")
+script = ExtResource("2_7eevp")
+
+[node name="ExitOptionsButton" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+icon = ExtResource("2_5ocmw")
+script = ExtResource("4_nqf7n")
