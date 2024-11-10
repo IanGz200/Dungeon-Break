@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://by66j6r3k0dp0"]
+[gd_scene load_steps=6 format=3 uid="uid://by66j6r3k0dp0"]
 
 [ext_resource type="Texture2D" uid="uid://co5bxgkv8jrq3" path="res://Sprites/Sprites Botones/Sprite-APPLY_BUTTON.png" id="1_6fmgy"]
+[ext_resource type="Script" path="res://Scripts/OptionsMenu/DisplayModeMenuButton.gd" id="1_soyax"]
 [ext_resource type="Texture2D" uid="uid://756ne7eilcfx" path="res://Sprites/Sprites Botones/Sprite-EXIT_BUTTON.png" id="2_5ocmw"]
 [ext_resource type="Script" path="res://Scripts/OptionsMenu/ApplyOptionsButton.gd" id="2_7eevp"]
 [ext_resource type="Script" path="res://Scripts/OptionsMenu/ExitOptionsButton.gd" id="4_nqf7n"]
 
-[node name="Control" type="Control"]
+[node name="OptionsMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,7 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="BackgroundColorGreen" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,7 +23,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.376471, 0.376471, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="OptionsMarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,26 +35,26 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="OptionsVBoxContainer" type="VBoxContainer" parent="OptionsMarginContainer"]
 layout_mode = 2
 
-[node name="DisplayModeContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+[node name="DisplayModeContainer" type="PanelContainer" parent="OptionsMarginContainer/OptionsVBoxContainer"]
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/DisplayModeContainer"]
+[node name="BackgroundColorLightGreen" type="ColorRect" parent="OptionsMarginContainer/OptionsVBoxContainer/DisplayModeContainer"]
 layout_mode = 2
 color = Color(1.05888e-06, 0.491312, 0.491312, 1)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/DisplayModeContainer"]
+[node name="DisplayModeHBoxContainer" type="HBoxContainer" parent="OptionsMarginContainer/OptionsVBoxContainer/DisplayModeContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/DisplayModeContainer/HBoxContainer"]
+[node name="DisplayModeLabel" type="Label" parent="OptionsMarginContainer/OptionsVBoxContainer/DisplayModeContainer/DisplayModeHBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
 text = "Display Mode"
 
-[node name="MenuButton" type="MenuButton" parent="MarginContainer/VBoxContainer/DisplayModeContainer/HBoxContainer"]
+[node name="DisplayModeMenuButton" type="MenuButton" parent="OptionsMarginContainer/OptionsVBoxContainer/DisplayModeContainer/DisplayModeHBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_font_sizes/font_size = 40
@@ -64,69 +65,70 @@ popup/item_1/text = "Borderless Window"
 popup/item_1/id = 1
 popup/item_2/text = "Windowed"
 popup/item_2/id = 2
+script = ExtResource("1_soyax")
 
-[node name="ResolutionContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+[node name="ResolutionContainer" type="PanelContainer" parent="OptionsMarginContainer/OptionsVBoxContainer"]
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/ResolutionContainer"]
+[node name="BackgroundColorDarkGreen" type="ColorRect" parent="OptionsMarginContainer/OptionsVBoxContainer/ResolutionContainer"]
 layout_mode = 2
 color = Color(1.51612e-06, 0.284428, 0.284428, 1)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ResolutionContainer"]
+[node name="ResolutionHBoxContainer" type="HBoxContainer" parent="OptionsMarginContainer/OptionsVBoxContainer/ResolutionContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ResolutionContainer/HBoxContainer"]
+[node name="ResolutionLabel" type="Label" parent="OptionsMarginContainer/OptionsVBoxContainer/ResolutionContainer/ResolutionHBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
 text = "Resolution"
 
-[node name="MenuButton" type="MenuButton" parent="MarginContainer/VBoxContainer/ResolutionContainer/HBoxContainer"]
+[node name="ResolutionMenuButton" type="MenuButton" parent="OptionsMarginContainer/OptionsVBoxContainer/ResolutionContainer/ResolutionHBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_font_sizes/font_size = 40
 text = "Prueba
 "
 
-[node name="MaxFramerateContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+[node name="MaxFramerateContainer" type="PanelContainer" parent="OptionsMarginContainer/OptionsVBoxContainer"]
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/MaxFramerateContainer"]
+[node name="BackgroundColorLightGreen" type="ColorRect" parent="OptionsMarginContainer/OptionsVBoxContainer/MaxFramerateContainer"]
 layout_mode = 2
 color = Color(1.05888e-06, 0.491312, 0.491312, 1)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MaxFramerateContainer"]
+[node name="MaxFramerateHBoxContainer" type="HBoxContainer" parent="OptionsMarginContainer/OptionsVBoxContainer/MaxFramerateContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MaxFramerateContainer/HBoxContainer"]
+[node name="MaxFramerateLabel" type="Label" parent="OptionsMarginContainer/OptionsVBoxContainer/MaxFramerateContainer/MaxFramerateHBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
 text = "Max Framerate"
 
-[node name="MenuButton" type="MenuButton" parent="MarginContainer/VBoxContainer/MaxFramerateContainer/HBoxContainer"]
+[node name="MaxFramerateMenuButton" type="MenuButton" parent="OptionsMarginContainer/OptionsVBoxContainer/MaxFramerateContainer/MaxFramerateHBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_font_sizes/font_size = 40
 text = "Prueba"
 
-[node name="SoundContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+[node name="SoundContainer" type="PanelContainer" parent="OptionsMarginContainer/OptionsVBoxContainer"]
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/SoundContainer"]
+[node name="BackgroundColorDarkGreen" type="ColorRect" parent="OptionsMarginContainer/OptionsVBoxContainer/SoundContainer"]
 layout_mode = 2
 color = Color(1.51612e-06, 0.284428, 0.284428, 1)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/SoundContainer"]
+[node name="SoundHBoxContainer" type="HBoxContainer" parent="OptionsMarginContainer/OptionsVBoxContainer/SoundContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/SoundContainer/HBoxContainer"]
+[node name="SoundLabel" type="Label" parent="OptionsMarginContainer/OptionsVBoxContainer/SoundContainer/SoundHBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
 text = "Sound"
 
-[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/SoundContainer/HBoxContainer"]
+[node name="SoundHSlider" type="HSlider" parent="OptionsMarginContainer/OptionsVBoxContainer/SoundContainer/SoundHBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 10
@@ -134,23 +136,23 @@ size_flags_vertical = 4
 max_value = 1.0
 step = 0.001
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+[node name="OptionsButtonsPanelContainer" type="PanelContainer" parent="OptionsMarginContainer/OptionsVBoxContainer"]
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/PanelContainer"]
+[node name="BackgroundColorLightGreen" type="ColorRect" parent="OptionsMarginContainer/OptionsVBoxContainer/OptionsButtonsPanelContainer"]
 layout_mode = 2
 color = Color(1.05888e-06, 0.491312, 0.491312, 1)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer"]
+[node name="OptionsButtonsHBoxContainer" type="HBoxContainer" parent="OptionsMarginContainer/OptionsVBoxContainer/OptionsButtonsPanelContainer"]
 layout_mode = 2
 
-[node name="ApplyOptionsButtont" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+[node name="ApplyOptionsButtont" type="Button" parent="OptionsMarginContainer/OptionsVBoxContainer/OptionsButtonsPanelContainer/OptionsButtonsHBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 10
 icon = ExtResource("1_6fmgy")
 script = ExtResource("2_7eevp")
 
-[node name="ExitOptionsButton" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+[node name="ExitOptionsButton" type="Button" parent="OptionsMarginContainer/OptionsVBoxContainer/OptionsButtonsPanelContainer/OptionsButtonsHBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 icon = ExtResource("2_5ocmw")
