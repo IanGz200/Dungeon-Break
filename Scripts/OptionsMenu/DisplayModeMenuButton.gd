@@ -6,6 +6,7 @@ var id_prsd:int
 func _ready():
 	
 	self.get_popup().id_pressed.connect(display_option)
+	self.get_popup().id_pressed.connect($"../../../ResolutionContainer/ResolutionHBoxContainer/ResolutionMenuButton".display_options)
 	
 	var windowMode:int = DisplayServer.window_get_mode()
 	
@@ -18,8 +19,5 @@ func _ready():
 			text = "Fullscreen"
 
 func display_option(id):
-
-	print(id)
-
 	id_prsd = id
 	text = get_popup().get_item_text(id)
