@@ -17,15 +17,9 @@ func _ready():
 		4:
 			text = "Fullscreen"
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
 func display_option(id):
-	
-	print(id)
-	
-	id_prsd=id
 
+	print(id)
+
+	id_prsd = id
 	text = get_popup().get_item_text(id)
