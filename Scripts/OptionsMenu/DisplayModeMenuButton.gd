@@ -7,7 +7,7 @@ func _ready():
 	
 	self.get_popup().id_pressed.connect(display_option)
 	
-	var windowMode = DisplayServer.window_get_mode()
+	var windowMode:int = DisplayServer.window_get_mode()
 	
 	match windowMode:
 		0:
@@ -23,5 +23,9 @@ func _process(delta):
 
 
 func display_option(id):
+	
+	print(id)
+	
+	id_prsd=id
 
 	text = get_popup().get_item_text(id)
